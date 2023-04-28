@@ -20,6 +20,7 @@ blockchain = [
 # Write code below that returns the number of KelloggCoin that each user has in their 
 # KelloggCoin "wallet".
 
+
 # It should print out:
 # Ben's KelloggCoin balance is 14000
 # Brian's KelloggCoin balance is 13000
@@ -27,3 +28,28 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+# Variables for wallets
+
+ben_wallet = 0
+brian_wallet = 0
+evan_wallet = 0
+anthony_wallet = 0
+
+for trade in blockchain
+
+if trade["from_user"] == "ben"
+  ben_wallet = ben_wallet - trade["amount"]
+elsif trade["from_user"] == "evan"
+  evan_wallet = evan_wallet - trade["amount"]
+elsif trade["from_user"] == "anthony"
+  anthony_wallet = anthony_wallet - trade["amount"]
+elsif trade["from_user"] == "brian"
+  brian_wallet = brian_wallet - trade["amount"]
+end
+end
+
+puts ben_wallet
+puts brian_wallet
+puts anthony_wallet
+puts evan_wallet
