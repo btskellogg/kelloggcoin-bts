@@ -36,7 +36,12 @@ brian_wallet = 0
 evan_wallet = 0
 anthony_wallet = 0
 
+
+# Start Loop
 for trade in blockchain
+
+
+#Code to take coins out of wallett - note it let's you go negative which doesn't practically make sences
 
 if trade["from_user"] == "ben"
   ben_wallet = ben_wallet - trade["amount"]
@@ -47,9 +52,25 @@ elsif trade["from_user"] == "anthony"
 elsif trade["from_user"] == "brian"
   brian_wallet = brian_wallet - trade["amount"]
 end
+
+#Code to put coins in the wallett - note it let's you go negative which doesn't practically make sences
+
+
+if trade["to_user"] == "ben"
+    ben_wallet = ben_wallet + trade["amount"]
+elsif trade["to_user"] == "evan"
+    evan_wallet = evan_wallet + trade["amount"]
+elsif trade["to_user"] == "anthony"
+    anthony_wallet = anthony_wallet + trade["amount"]
+elsif trade["to_user"] == "brian"
+    brian_wallet = brian_wallet + trade["amount"]
 end
 
-puts ben_wallet
-puts brian_wallet
-puts anthony_wallet
-puts evan_wallet
+end
+  
+# Output
+
+puts "Ben's KelloggCoin balance is #{ben_wallet}"
+puts "Brian's KelloggCoin balance is #{brian_wallet}"
+puts "Evan's KelloggCoin balance is #{evan_wallet}"
+puts "Anthony's KelloggCoin balance is #{anthony_wallet}"
